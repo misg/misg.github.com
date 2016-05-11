@@ -2,8 +2,8 @@
 layout: post
 title: "A GSoC adventure…"
 description: ""
-category: [GSoC2016] 
-tags: [GSoC2016, DUNE, Opening]
+category: [GSoC2016, DUNE] 
+tags: [Opening]
 ---
 {% include JB/setup %}
 
