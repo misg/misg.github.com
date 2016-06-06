@@ -73,4 +73,4 @@ implementations while insuring at compile time these implementations are complia
 
 ### What's next?
 
-I just received an email from my mentors last night: they managed to implement an initial codebase to spare me the difficulties of starting from scratch. So I'm going to study their code and then work on it to achieve the first milestine we defined, I will talk about that in an upcoming article.
+I just received an email from my mentors last night: they managed to implement an initial codebase to spare me the difficulties of starting from scratch. So I'm going to study their code and then work on it to achieve the first milestone we defined, I will talk about that in an upcoming article.
