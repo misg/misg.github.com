@@ -62,8 +62,10 @@ bigger number of cells in x and y directions was the solution to obtain a real p
 I also lost some hours trying to figure out why the initialization of openmpi was failing (when trying to execute `mpirun -np 2 python demo/parfinitevolume.pyc` to test my code). Thanks to my mentors, invoking `from mpi4py import MPI` as __first__ line of my Python code fixed that.  
 
 * After this setup, I began to test my parallel finite volume implementation with `mpirun -np 2 demo/parfinitevolume.pyc` and it's here the problems appear, especially with segmentation/type faults. In fact, it took me three days of debugging to finally have a working implementation of a C++ DataHandle class for double values only. Here the lessons I learnt:
-    * always think carefully about the `pybind11::return_value_policy` to use when writing C++ code that interacts directly with Python (eg `DataHandle`)
-    * do not forget about the boolean parameter `borrowed` of `pybind11::object`'s constructor (I had a lot of segfaults because I forgot about it)
+
+> always think carefully about the `pybind11::return_value_policy` to use when writing C++ code that interacts directly with Python (eg `DataHandle`)
+
+>  do not forget about the boolean parameter `borrowed` of `pybind11::object`'s constructor (I had a lot of segfaults because I forgot about it)
 With these two lessons, I finally managed to implement a working (C++) `DataHandle` class, using a `pybind11::list` as buffer for the Python `DataHandle` (see the code [here](https://gitlab.dune-project.org/michael.sghaier/dune-corepy/blob/master/dune/corepy/grid/gridview.hh#L104))
 
 * Finally, I tried to be generic by providing a C++ `DataHandle` parameterized by `pybind11::object` (and no more `double`), to give some freedom to the Python user. And again, that was the source of a lot of segmentation faults. Since I haven't yet succeed to do that, here is the email I sent to my mentors:
