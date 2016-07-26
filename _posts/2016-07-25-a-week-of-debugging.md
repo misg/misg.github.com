@@ -67,7 +67,8 @@ I also lost some hours trying to figure out why the initialization of openmpi wa
 
 >  do not forget about the boolean parameter `borrowed` of `pybind11::object`'s constructor (I had a lot of segfaults because I forgot about it)
 
-With these two lessons, I finally managed to implement a working (C++) `DataHandle` class, using a `pybind11::list` as buffer for the Python `DataHandle` (see the code [here](https://gitlab.dune-project.org/michael.sghaier/dune-corepy/blob/master/dune/corepy/grid/gridview.hh#L104))
+With these two lessons, I finally managed to implement a working (C++) `DataHandle` class, using a `pybind11::list` as buffer for the Python `DataHandle` (see the code [here](https://gitlab.dune-project.org/michael.sghaier/dune-corepy/blob/master/dune/corepy/grid/gridview.hh#L104)). In consequences, after some minor modifications,  my parallel finite volume scheme (see [here](https://gitlab.dune-project.org/michael.sghaier/dune-corepy/blolb/master/demo/parfinitevolume.py)) is
+finally working! (Note: only for double values communicated between the partitions of entities) After running it on two processes, I got the VTU files of each process and viewed the global result with ParaView. 
 
 * Finally, I tried to be generic by providing a C++ `DataHandle` parameterized by `pybind11::object` (and no more `double`), to give some freedom to the Python user. And again, that was the source of a lot of segmentation faults. Since I haven't yet succeed to do that, here is the email I sent to my mentors:
 
