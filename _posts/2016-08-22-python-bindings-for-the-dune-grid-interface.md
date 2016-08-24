@@ -9,13 +9,14 @@ tags: [The end, Work product submission, Python bindings, Grid interface]
 
 Since we are at the end of the Google Summer of Code 2016, It is now the time to write a final post to talk about what I have done during this summer.
 
-But let me re-introduce myself first: I am Michaël Sghaïer, french third-year student in Software Engineering at Polytechnique Montréal, Canada. I am mostly interested in C++ programming, Python and algorithms and that is why I have taken part in this Google Summer of Code 2016 as developer for the [DUNE organization](https://www.dune-project.org/) where [my project](https://summerofcode.withgoogle.com/projects/#6395085230964736) was to implement Python bindings for the DUNE grid interface.
+But let me re-introduce myself first: I am Michaël Sghaïer, french third-year student in Software Engineering at Polytechnique Montréal, Canada. I am mostly interested in C++ programming, Python and algorithms and this is why I have taken part in this Google Summer of Code 2016 as developer for the [DUNE organization](https://www.dune-project.org/) where [my project](https://summerofcode.withgoogle.com/projects/#6395085230964736) was to implement Python bindings for the DUNE grid interface.
 
 ### What I have done
 
 As described in [my proposal](https://summerofcode.withgoogle.com/serve/5660370790252544/) and in the [first post](http://misg.github.io/gsoc2016/dune/2016/05/01/a-gsoc-adventure) of this blog, my project was to export to Python the grid interface that DUNE provides. This [grid interface](https://www.dune-project.org/doxygen/master/group__GridInterface.html) is the core of the DUNE project since each grid implementation has to fulfill it to provide a specific discretization of space, in a transparent way for the user who can then solve partial differential equations using the grid of his choice.
 
-To achieve this project, I dived myself in the huge C++11 codebase of DUNE, learnt how to use pybind11, discussed a lot with my mentors, worked with sub-milestones and finally did a lot of debugging. You can find the final result as a DUNE module named `dune-corepy` just here: **<https://gitlab.dune-project.org/michael.sghaier/dune-corepy>**. The project is in a useable state and you can test it after a few steps, as explained in the
+To achieve this project, I dived myself in the huge C++11 codebase of DUNE, learnt how to use pybind11, discussed a lot with my mentors, worked with sub-milestones and finally did a lot of debugging. You can find the final result as a DUNE module named `dune-corepy` just here: **<https://gitlab.dune-project.org/michael.sghaier/dune-corepy>** and see all my activity (commits, issues, merge requests) here: **<https://gitlab.dune-project.org/u/michael.sghaier>** (entirely related to this
+project). The project is in a useable state and you can test it after a few steps, as explained in the
 [README](https://gitlab.dune-project.org/michael.sghaier/dune-corepy).
 
 With the help of my mentors, I implemented bindings for almost all of the concepts listed in my proposal:
